@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.11.3/p5.js' integrity='sha512-BLd2MDTrBCo01Vkhjbjn3ITBDbx3o/Lt7D5hj5oLwW8vlDHYXMenxglTcUURCgBhdLNAjZ7KD8x4ZA7bQY3OhA==' crossorigin='anonymous'></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <button id="clear-btn">Clear</button>
+    <script>
+        let canvas;
+
+        function setup(){
+            // create canvas that fills the window
+            canvas = createCanvas(windowWidth, windowHeight);
+            // set background color to white
+            background(255);
+        }
+
+        function draw(){
+            // no constinous drawing code is needed here
+            // we handle drawing in mouseDragged function
+        }
+
+        function mouseDragged(){
+            // when the mouse is dragged draw line
+            stroke(0); //black color
+            strokeWeight(4);
+            line(pmouseX, pmouseY, mouseX, mouseY);
+        }
+
+        // clear the canvas when clear button is clicked
+        document.getElementById("clear-btn").addEventListener("click", function(){
+            background(255);
+        });
+    </script>
+</body>
+</html>
